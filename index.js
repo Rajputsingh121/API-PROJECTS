@@ -2,6 +2,8 @@ const express=require("express");
 const app=express();
 const port=7070;
 const path=require("path");
+app.set("view engine","ejs");
+app.set(express.static(path.join(__dirname,"public")));
 app.listen(port,()=>{
     console.log("listining to port:7070");
 })
