@@ -2,6 +2,7 @@ const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
 const path=require("path");
+const multer= require ('multer');
 app.set(express.static(path.join(__dirname,"public")));
 const {v4:uuid4}=require("uuid");
 app.use(express.urlencoded({extended:true}));
