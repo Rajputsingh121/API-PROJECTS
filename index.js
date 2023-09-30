@@ -2,7 +2,7 @@ const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
 const path=require("path");
-const chat=require("./models/chat.js");
+const edit=require("./models/edit.js");
 const multer= require ("multer");
 app.set("views",path.join(__dirname,"views"));
 app.set(express.static(path.join(__dirname,"public")));
@@ -22,10 +22,9 @@ async function main() {
 
 };
  //Index route
-app.get("/chats",async(req,res)=>{
-let chats=await chat.find();
-console.log(chats);
-res.render("index.ejs",{chats});
+app.get("/edits",async(req,res)=>{
+let edits=req.body;
+res.render("index.ejs",{edits});
 })
 
 app.get("/",(req,res)=>{
